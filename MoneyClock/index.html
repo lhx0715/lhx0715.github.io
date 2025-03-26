@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作激励计时器</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <!-- 添加Font Awesome图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 添加用户头像 -->
+    <div class="user-avatar">
+      <i class="fas fa-user"></i>
+    </div>
+    
+    <div class="sound-toggle">
+      <i class="fas fa-volume-up"></i>
+    </div>
+    
+    <div class="clock-wrapper">
+      <div class="input-wrapper">
+        <label for="monthly-salary">月薪（元）:</label>
+        <input type="number" id="monthly-salary" class="income-input" min="0" step="100" value="8000">
+      </div>
+      <h1 class="income-display">¥<span id="amount">0.00</span></h1>
+      <div class="time-display">
+        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+      </div>
+    </div>
+    <canvas id="confetti"></canvas>
+    <div class="wallet-container">
+      <div class="wallet-display">
+        <span>钱包总额：</span>
+        <span id="wallet-amount">¥0.00</span>
+      </div>
+      <div class="control-buttons">
+        <button id="start-work" class="btn-start btn">开始工作</button>
+        <button id="end-work" class="btn-end btn">下班</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src/script.js"></script>
+</body>
+</html>

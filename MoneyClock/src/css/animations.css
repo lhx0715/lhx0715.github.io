@@ -1,0 +1,150 @@
+/* 钱包弹出动画 */
+@keyframes moneyPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  /* 浮动动画 */
+  @keyframes floatAnimation {
+    0%, 100% { 
+      transform: translateY(0) rotateZ(0deg);
+    }
+    50% { 
+      transform: translateY(-8px) rotateZ(1deg);
+    }
+  }
+  
+  /* 钱包动画 */
+  .money-pop {
+    animation: moneyPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  /* 时间动画 */
+  .time-transition {
+    animation: pulse 0.3s ease;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* 按钮涟漪效果 */
+  .btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  .btn:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 0.5;
+    }
+    20% {
+      transform: scale(25, 25);
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(40, 40);
+    }
+  }
+  
+  /* 摘要图标脉冲动画 */
+  @keyframes summaryIconPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* 收入总结面板动画 */
+  .earnings-summary .summary-stat {
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .earnings-summary.show .summary-stat {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .earnings-summary.show .summary-stat:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  
+  .earnings-summary.show .summary-stat:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  .earnings-summary.show .summary-stat:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  /* 用户面板动画 */
+  .user-panel .panel-section {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .user-panel.show .panel-section {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .user-panel.show .panel-section:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  
+  .user-panel.show .panel-section:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  .user-panel.show .panel-section:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  /* 响应式动画调整 */
+  @media (max-width: 600px) {
+    .summary-content {
+      padding: 2rem 1.5rem;
+    }
+    
+    .summary-header h3 {
+      font-size: 1.6rem;
+    }
+    
+    .summary-header i {
+      font-size: 2.8rem;
+    }
+    
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+    
+    .stat-value {
+      font-size: 1.1rem;
+    }
+    
+    .stat-value.highlight {
+      font-size: 1.3rem;
+    }
+  }

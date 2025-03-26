@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+  
+  body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6;
+    color: #333;
+    transition: background 0.8s ease;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 680px;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+  
+  /* 响应式调整 */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  }
